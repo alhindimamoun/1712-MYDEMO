@@ -1,6 +1,8 @@
 package com.honorarium.JB;
 import java.io.Serializable;
 
+import org.omg.CORBA.SetOverrideType;
+
 public class UserBean implements Serializable {
 
 	/**
@@ -63,6 +65,11 @@ public class UserBean implements Serializable {
 	
 	public int getType() {
 		return type;
+	}
+	
+	public void setType(int type)
+	{
+		this.type = type; 
 	}
 	
 	

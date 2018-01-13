@@ -43,6 +43,7 @@ public class UserDTO implements Serializable
 		return type;
 	}
 	
+	
 	@Override
 	public String toString() {
 		

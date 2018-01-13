@@ -7,6 +7,7 @@ window.onload = function(){
 }
 
 
+//VIEW FOR ALL USERS
 function existUserLoad(){
 
 	var xhr = new XMLHttpRequest();
@@ -22,6 +23,8 @@ function existUserLoad(){
 }
 
 
+
+//VIEWS FOR LOGIN
 function employeeSignin(){
 	
 	var xhr = new XMLHttpRequest();
@@ -34,6 +37,9 @@ function employeeSignin(){
 	xhr.open("GET","employeelogin",true);
 	xhr.send();
 }
+
+
+
 
 function employerSignin(){
 	
@@ -50,6 +56,11 @@ function employerSignin(){
 
 
 
+
+
+
+
+//REGISTER ----------------------------------------------------------------------------------------------
 function getNewUserEmployee(){
 	var xhr = new XMLHttpRequest();
 	
@@ -65,6 +76,7 @@ function getNewUserEmployee(){
 	xhr.send();
 }
 
+
 function getNewUserEmployer(){
 	var xhr = new XMLHttpRequest();
 	
@@ -72,7 +84,7 @@ function getNewUserEmployer(){
 	if(xhr.readyState == 4 && xhr.status == 200){
 		document.getElementById('loginview').innerHTML = xhr.responseText;
 		document.getElementById('backButton').addEventListener("click",existUserLoad,false);
-		document.getElementById('confirm').addEventListener("click",registerNewUserEmployer,false);
+		document.getElementById('confirm').addEventListener("click",registerNewUserEmpoloyer,false);
 		}
 	}
 	
@@ -82,6 +94,11 @@ function getNewUserEmployer(){
 
 
 
+
+
+
+
+//ALERTS-----------------------------------------------------------------------------------------------------
 function userStatus(){
 	var xhr = new XMLHttpRequest();
 	
@@ -96,6 +113,25 @@ function userStatus(){
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//SEND REGISTRATION -----------------------------------------------------------------------------------------
 
 
 function registerNewUser(){
@@ -114,6 +150,7 @@ function registerNewUser(){
 		lastname: lastname
 	}
 	
+	
 	user = JSON.stringify(user);
 	
 	var xhr = new XMLHttpRequest();
@@ -129,5 +166,33 @@ function registerNewUser(){
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhr.send(user);
 }
+
+
+
+
+function registerNewUserEmpoloyer(){
+	
+	var username = document.getElementById('username').value;
+	var password = document.getElementById('password').value;
+	var email = document.getElementById('email').value;
+	var firstname = document.getElementById('firstname').value;
+	var lastname = document.getElementById('lastname').value;	
+	
+	jArray = JSON.stringify(jArray);
+	
+	var xhr = new XMLHttpRequest();
+	
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState ==4 && xhr.status == 200){
+			console.log(xhr.responseText);
+			userStatus();
+			existUserLoad();
+		}
+	}
+	xhr.open("POST","newuseradmin",true);
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.send(jArray);
+}
+
 
 

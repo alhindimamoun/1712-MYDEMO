@@ -25,6 +25,10 @@ input:-webkit-autofill:active {
     margin: auto;
 }
 
+.low-height{
+	height: 50%;
+}
+
 .margin-top-by-30
 {
 	margin-top: 10%;
@@ -68,9 +72,6 @@ input:-webkit-autofill:active {
 	/*Image Used*/
     background-image: url("../resources/amazing-nature.jpg");
 
-    /* Full height */
-    height: 100%; 
-
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
@@ -84,6 +85,32 @@ input:-webkit-autofill:active {
 	width="30"; 
 	height="30";
 }
+
+.info-container{
+	/*Image Used*/
+    background-image: url("../resources/infopicture.jpg");
+ 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.info-background
+{
+	/*Image Used*/
+    background-image: url("../resources/aurora.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .loginbox
 {
 	background-image: url("../resources/beautiful.jpg");
@@ -132,4 +159,6 @@ input:-webkit-autofill:active {
 	margin:0px;
 	width:50%;
 }
+
+
 

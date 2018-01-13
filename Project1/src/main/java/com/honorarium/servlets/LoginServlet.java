@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 		UserDTO user = lgs.checkLogin(username,password);
 		
 		
-			if(user != null)
+			if(user != null && user.getType() == 0)
 			{	
 				System.err.println("Login Sucessful");
 				HttpSession session = req.getSession(); 
