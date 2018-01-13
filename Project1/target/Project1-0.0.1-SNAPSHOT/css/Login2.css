@@ -1,0 +1,164 @@
+@charset "ISO-8859-1";
+
+html,body
+{
+	height: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+   	-webkit-text-fill-color: white !important;
+}
+
+.parent {position: relative;}
+
+.child {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    margin: auto;
+}
+
+.low-height{
+	height: 50%;
+}
+
+.margin-top-by-30
+{
+	margin-top: 10%;
+}
+
+.padding-sm
+{
+	padding-bottom:50px;
+	margin-top: 5px;
+}
+
+.padding-lft
+{
+	padding-left: 10px;
+}
+
+.inner-padding
+{
+	padding-top: 12px;
+}
+
+.no-padding{
+	padding: 0px;
+}
+
+.header
+{
+	background-image: url("../resources/loginbutton.png");
+
+	height: 10%;
+
+	border-radius: 2px;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.background {
+
+	/*Image Used*/
+    background-image: url("../resources/amazing-nature.jpg");
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.img
+{
+	background-image: url("../resources/logo.png"); 
+	width="30"; 
+	height="30";
+}
+
+.info-container{
+	/*Image Used*/
+    background-image: url("../resources/infopicture.jpg");
+ 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.info-background
+{
+	/*Image Used*/
+    background-image: url("../resources/aurora.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.loginbox
+{
+	background-image: url("../resources/beautiful.jpg");
+
+
+	padding:30px;
+
+	border-radius: 4px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.wbb-text
+{
+	font-size: 20px;
+   -webkit-text-fill-color: white; 
+   -webkit-text-stroke-width: .5px;
+   -webkit-text-stroke-color: blue;
+}
+
+.headerText
+{
+	font-style: italic; 
+	text-shadow:-1px 7px 8px;
+	letter-spacing:3px;
+}
+
+.height-restict{
+	max-height: 80%;
+}
+
+.nav-margin
+{
+	margin-top:30px;
+}
+
+.z-5{
+
+	position: absolute;
+	width: 100%;
+	z-index: 5;
+}
+
+.type-button{
+	margin:0px;
+	width:50%;
+}
+
+
+

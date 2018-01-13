@@ -2,7 +2,6 @@ package com.honorarium.servlets;
 
 import java.io.IOException;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import javax.servlet.ServletException;
@@ -12,17 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.User;
-import org.eclipse.jdt.internal.compiler.util.Messages;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import com.honorarium.JB.UserBean;
-import com.honorarium.service.LoginService;
 import com.honorarium.service.NewUserLogic;
 
-import oracle.jdbc.OracleResultSetMetaData.SecurityAttribute;
-import oracle.jdbc.driver.Message;
 
 @WebServlet("/newuser")
 public class NewUserServlet extends HttpServlet{
