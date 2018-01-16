@@ -12,9 +12,10 @@ public class ReimbursementDTO implements Serializable{
 	 */
 	private static final long serialVersionUID = -8301293937974642409L;
 	
+	private int ticketKey;
 	private float amount;
 	private String description;
-	private Blob picture;
+	private byte[] picture;
 	private Timestamp submitted;
 	private Timestamp resolved;
 	private String authorFirstname;
@@ -24,9 +25,10 @@ public class ReimbursementDTO implements Serializable{
 	private String type;
 	private String status;
 
-	public ReimbursementDTO(float amount, String description, Blob picture, Timestamp submitted, Timestamp resolved,
+	public ReimbursementDTO(int ticketKey,float amount, String description, byte[] picture, Timestamp submitted, Timestamp resolved,
 			String authorFirstname, String authorLastname, String resolverFirstname, String resolverLastname,
 			String type, String status) {
+		this.ticketKey = ticketKey;
 		this.amount = amount;
 		this.description = description;
 		this.picture = picture;
@@ -39,6 +41,25 @@ public class ReimbursementDTO implements Serializable{
 		this.type = type;
 		this.status = status;
 	}
+
+
+
+
+	
+
+	public int getTicketKey() {
+		return ticketKey;
+	}
+
+
+
+
+
+
+	public void setTicketKey(int ticketKey) {
+		this.ticketKey = ticketKey;
+	}
+
 
 
 
@@ -76,7 +97,7 @@ public class ReimbursementDTO implements Serializable{
 
 
 
-	public Blob getPicture() {
+	public byte[] getPicture() {
 		return picture;
 	}
 
@@ -84,7 +105,7 @@ public class ReimbursementDTO implements Serializable{
 
 
 
-	public void setPicture(Blob picture) {
+	public void setPicture(byte[] picture) {
 		
 		this.picture = picture;
 	}
@@ -95,8 +116,10 @@ public class ReimbursementDTO implements Serializable{
 
 	public String getSubmitted() {
 		
-		String formattedDate = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss").format(this.submitted);
-		return formattedDate;
+		if(this.submitted != null) {
+			return new SimpleDateFormat("MM/dd/yyyy hh:mm:ss").format(this.submitted);
+		}
+		return null;
 	}
 
 
@@ -104,6 +127,8 @@ public class ReimbursementDTO implements Serializable{
 
 
 	public void setSubmitted(Timestamp submitted) {
+		
+		
 		this.submitted = submitted;
 	}
 
@@ -112,8 +137,10 @@ public class ReimbursementDTO implements Serializable{
 
 
 	public String getResolved() {
-		String formattedDate = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss").format(this.resolved);
-		return formattedDate;
+		if(this.resolved != null) {
+			return new SimpleDateFormat("MM/dd/yyyy hh:mm:ss").format(this.resolved);
+		}
+		return null;
 	}
 
 

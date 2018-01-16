@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.honorarium.DTO.UserDTO;
 import com.honorarium.JB.UserBean;
 
 /**
@@ -82,6 +85,46 @@ public class UserDAO {
 
 			if (rs.next()) {
 				return new UserBean(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),rs.getString(5),rs.getInt(6));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return u;
+	}
+	
+	public int getUserID(String userName) {
+		
+		int userID = -1;
+
+		try (Connection conn = DriverManager.getConnection(SURL, SUSERNAME, SSERVERPASS)) {
+			String sql = "Select u_id from honorarium_users where u_username=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, userName);
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {
+				userID = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return userID;
+	}
+	
+	public List<UserDTO> getAllUsersByType(int type) {
+		List<UserDTO> u = new ArrayList<>();
+
+		try (Connection conn = DriverManager.getConnection(SURL, SUSERNAME, SSERVERPASS)) {
+			String sql = "Select u_username,u_firstname,u_lastname,u_email,ur_id from honorarium_users where ur_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, type);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				u.add (new UserDTO(rs.getString(1), rs.getString(2), 
+						rs.getString(3), rs.getString(4),rs.getInt(5)));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

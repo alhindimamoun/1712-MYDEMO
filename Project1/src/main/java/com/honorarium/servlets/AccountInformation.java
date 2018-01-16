@@ -32,7 +32,7 @@ public class AccountInformation extends HttpServlet {
 				
 				ObjectMapper mapper = new ObjectMapper();
 				String json = mapper.writeValueAsString(sessionUser);
-				System.out.println(json);
+				//System.out.println(json);
 				PrintWriter out = resp.getWriter();
 				resp.setContentType("application/json");
 				out.write(json);

@@ -1,0 +1,43 @@
+<div class="row justify-content-md-center">
+<div class="col-md-4 margin-top-by-30 height-restict animated flipInY" id="full-box">
+    <div class="padding-sm header parent">
+    <div class="inner-padding text-white headerText text-center child">New Reimbursement</div>
+    </div>
+    <div class="panel-body loginbox">
+      <div class ="form-group">
+        <label class="wbb-text" >Amount</label>
+        <div class="col-12 border">
+          <input type ="number" id="amount" class="form-control text-white padding-lft" placeholder="Amount" required>
+        </div>
+      </div>
+      <div class ="form-group">
+        <label class="wbb-text" >Description</label>
+          <div class="col-12 border">
+          <textarea class="form-control text-white" id="description" rows="4"></textarea>
+        </div>
+        </div>
+        <div class ="form-group">
+        <label class="wbb-text" >Type</label>
+        <div class="col-12 border">
+        <select class="form-control bg-dark text-white" id="ticketType">
+      	<option>Educational</option>
+      	<option>Travel</option>
+      	<option>Food</option>
+      	<option>Gas</option>
+      	<option>Other</option>
+    	</select>
+        </div>
+       </div>
+       
+       <div class="form-group">
+   		<label class="wbb-text text-white" >Picture</label>
+    	<input type="file" class="form-control-file text-white" id="pictureInput">
+    	<img id="reimbursementReceiptImg" >
+  	   </div>
+  
+      <div class = "form-group">
+        <button type ="submit" id="confirm" class="btn btn-primary btn-block">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

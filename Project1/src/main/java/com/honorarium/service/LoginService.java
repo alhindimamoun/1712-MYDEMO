@@ -5,8 +5,8 @@ import com.honorarium.JB.UserBean;
 import com.honorarium.doa.UserDAO;
 
 public class LoginService {
-	public static LoginService lis = new LoginService();
-	UserDAO loginDAO = UserDAO.getLoginDAO();
+	private static LoginService lis = new LoginService();
+	private UserDAO loginDAO = UserDAO.getLoginDAO();
 
 	private LoginService() {
 	}
